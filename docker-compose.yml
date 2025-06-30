@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: pokemon-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - pokemon-network
+
+  pokemon-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.simple
+    container_name: pokemon-service
+    restart: unless-stopped
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/pokemon_db
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    networks:
+      - pokemon-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  pokemon-network:
+    driver: bridge

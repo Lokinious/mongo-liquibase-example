@@ -1,0 +1,45 @@
+# Build output
+build/
+.gradle/
+bin/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test output
+test-results/
+.allure/
+
+# MongoDB data
+data/
+
+# Docker volumes
+mongodb_data/
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# Java
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Micronaut
+.micronaut/

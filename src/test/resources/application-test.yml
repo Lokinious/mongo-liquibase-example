@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: pokemon-card-service-test
+
+mongodb:
+  uri: mongodb://localhost:27017/pokemon_test_db
+
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/changelog/db.changelog-master.json
+
+logger:
+  levels:
+    liquibase: DEBUG
+    com.example: DEBUG

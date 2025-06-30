@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: pokemon-card-service
+  server:
+    port: 8080
+
+mongodb:
+  uri: ${MONGODB_URI:mongodb://localhost:27017/pokemon_db}
+
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/changelog/db.changelog-master.json
+
+app:
+  seed-data: true
+  verify-indexes: true
+
+logger:
+  levels:
+    liquibase: INFO
+    com.example: INFO
+    root: INFO

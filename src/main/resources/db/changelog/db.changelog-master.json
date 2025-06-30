@@ -1,0 +1,153 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createCollection": {
+              "collectionName": "pokemon_cards"
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "changeSet": {
+        "id": "2",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "pokemon_cards",
+              "keys": {
+                "name": 1,
+                "set": 1
+              },
+              "options": {
+                "unique": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "3",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "pokemon_cards",
+              "keys": {
+                "type": 1,
+                "rarity": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "4",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "pokemon_cards",
+              "keys": {
+                "marketPrice": -1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "5",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "pokemon_cards",
+              "keys": {
+                "createdAt": -1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "6",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createCollection": {
+              "collectionName": "card_owners"
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "changeSet": {
+        "id": "7",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "card_owners",
+              "keys": {
+                "email": 1
+              },
+              "options": {
+                "unique": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "8",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "card_owners",
+              "keys": {
+                "lastName": 1,
+                "firstName": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "9",
+        "author": "pokemon-service",
+        "changes": [
+          {
+            "ext:createIndex": {
+              "collectionName": "card_owners",
+              "keys": {
+                "ownedCardIds": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
